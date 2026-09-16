@@ -1,10 +1,13 @@
 const http=require('http');
 
-
-
 const express=require('express');
-const server=http.createServer(requesthandler);
-const port=3002;
-server.listen(port,()=>{
-    console.log(`Server is running on port ${port}`);
+
+const requesthandler=require('./user');
+const app=express();
+
+const server=http.createServer(app);
+
+const PORT=3002;
+server.listen(PORT,()=>{
+    console.log(`Server is running on port ${PORT}`)
 });
